@@ -92,13 +92,16 @@
         "title": "Projects",
         "projects": [
             {
-                "title": "Chess Tutor"
+                "title": "Chess Tutor",
+                "text": "A chess game where a player can play against several different levels of CPU difficulty, with the goal of creating an AI to play chess against and evaluate the strength of human player moves (Early Stages of Development)."
             },
             {
-                "title": "Minymal Stocks"
+                "title": "Minymal Stocks",
+                "text": "A tool based on minimalist-design principles for displaying and consolidating the more complex of historical stock data to present meaningful trends in the market to the end user (Development Start Date: TBD)."
             },
             {
-                "title": "Basketball Predictor"
+                "title": "Basketball Predictor",
+                "text": "Consolidation of NBA statistics to identify trends in team success, with the goal of reliably predicting the outcome of basketball games over time (Early Stages of Development)."
             }
         ]
     },
