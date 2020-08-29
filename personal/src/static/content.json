@@ -1,0 +1,129 @@
+{
+    "intro": {
+        "title": "Athavan Karunakaran",
+        "tagline": "Time is the most valuable commodity.",
+        "statement": "I am a full-stack development/QA team lead with a focus on creating automation tools and streamlining development processes, to make sure that we're using our time as wisely as possible."
+    },
+    "about": {
+        "title": "About Me",
+        "bio": "I've had 5+ years of work experience working for major companies including Bank of Montreal and Bell. I've done everything from leading a team of developers and QA to developing micro-service applications using modern technologies. I pick up things quickly and love exploring the best way to approach a new problem.",
+        "image": "./static/personal_photo.jpg"
+    },
+    "skills": {
+        "title": "Skills & Tools",
+        "skills": [
+            {
+                "title": "Soft Skills",
+                "skills": [
+                    "Leadership",
+                    "People Management",
+                    "Conflict Resolution",
+                    "Problem Solving",
+                    "Requirements Gathering",
+                    "Agile Methodologies"
+                ]
+            },
+            {
+                "title": "Frontend",
+                "skills": [
+                    "HTML",
+                    "CSS",
+                    "Javascript",
+                    "React",
+                    "Bootstrap",
+                    "Material UI",
+                    "Accessibility"
+                ]
+            },
+            {
+                "title": "Backend",
+                "skills": [
+                    "Python",
+                    "Selenium",
+                    "Robot Framework",
+                    "Beautiful Soup",
+                    "Flask",
+                    "Flask Restful"
+                ]
+            },
+            {
+                "title": "DevTools",
+                "skills": [
+                    "Git",
+                    "Docker",
+                    "Google Cloud",
+                    "Firebase",
+                    "Sketch"
+                ]
+            }
+        ]
+    },
+    "work": {
+        "title": "Work Experience",
+        "jobs": [
+            {
+                "title": "Web Development Team Lead - Bank of Montreal (May 2019 - Present)",
+                "points": [
+                    "Led a team of 5+ Developers and QAs managing ongoing campaigns and redesigns on the BMO.com site.",
+                    "Worked with the team to strategically addresses changes required for multiple campaigns in parallel, across different lines of business with strict deadlines, and worked with our business partners and design/content teams to coordinate toward a single goal.",
+                    "Built a React/Flask dashboard to track how our teams were doing across multiple performance indicators, to ensure that we were delivering to the highest standard.",
+                    "Built a React/Flask app to automate the creation of release notes and post them on Confluence, ensured that we were keeping track of what changes went to production and when.",
+                    "Created a system to auto-generate pages from templated Word documents, used by the product owners and content team, with minimal developer interaction. ",
+                    "Created an automated set of tests to run on every page to ensure that all of our pages were meeting a high level of quality. Tests include: accessibility, broken links, SEO ratings and page load speeds."
+                ]
+            },
+            {
+                "title": "Technical Consultant (QA) - QA Consultants (November 2017 - May 2019)",
+                "points": [
+                    "Worked as an Automation QA to test updates and redesign on the BMO.com website.",
+                    "Created generalized scripts to automate testing of text, links, accessibility, form interactions and calculators. This led to greater coverage and decreased delivery times across the 1000+ pages, that were in scope for our team."
+                ]
+            },
+            {
+                "title": "Technical QA - Bell Business Markets (July 2016 - October 2017)",
+                "points": [
+                    "Worked as a QA Analyst creating, writing and executing test case scenarios for an interactive voice response contact centre system.",
+                    "Went on to lead a team of 10 QA analysts to strategically achieve 100% test coverage of all of the branching conversational paths and scenarios and automate the test case writing."
+                ]
+            }
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "projects": [
+            {
+                "title": "Chess Tutor"
+            },
+            {
+                "title": "Minymal Stocks"
+            },
+            {
+                "title": "Basketball Predictor"
+            }
+        ]
+    },
+    "articles": {
+        "title": "Articles"
+    },
+    "contact": {
+        "title": "Contact Me",
+        "text": "Please feel free to reach out to me if you have any questions, would like to hire me, or if you would like to collaborate on any projects. I'd love to hear from you!",
+        "links": [
+            {
+                "text": "Github",
+                "link": ""
+            },
+            {
+                "text": "LinkedIn",
+                "link": ""
+            },
+            {
+                "text": "Email",
+                "link": ""
+            }
+        ]
+    },
+    "footer": {
+        "text": "© Copyright 2020, Developed by Athavan Karunakaran, all rights reserved."
+    }
+}
