@@ -6,7 +6,7 @@ import content from './static/content.json';
 
 const SectionTitleCard = (props) => (
     <Fade bottom>
-        <div className='shadow col-4 m-3 p-4'>
+        <div className='card-colour shadow col-4 m-3 p-4'>
             <h2 className='m-0'>{props.children}</h2>
         </div>
     </Fade>
@@ -16,7 +16,7 @@ const SectionCard = (props) => (
     <Fade bottom>
         <div>
             <div className={`d-flex justify-content-${props.justify}`}>
-                <div className={`shadow col-8 m-3 p-4 ${props.flex ? 'd-flex' : ''}`}>
+                <div className={`card-colour shadow col-8 m-3 p-4 ${props.flex ? 'd-flex' : ''}`}>
                     {props.children}
                 </div>
             </div>
@@ -35,7 +35,7 @@ const CardList = (props) => (
 const ListCard = (props) => (
     <Fade bottom>
         <li className={`col-${props.width} d-flex p-0`}>
-            <div className='shadow p-4 m-3 w-100'>
+            <div className='card-colour shadow p-4 m-3 w-100'>
                 {props.children}
             </div>
         </li>
@@ -46,7 +46,7 @@ const WideListCard = (props) => (
     <Fade bottom>
         <li className={`w-100 d-flex justify-content-${props.justify}`}>
             <div className={`col-${props.width} d-flex p-0`}>
-                <div className='shadow p-4 m-3 w-100'>
+                <div className='card-colour shadow p-4 m-3 w-100'>
                     {props.children}
                 </div>
             </div>
@@ -81,7 +81,7 @@ class App extends Component {
                             <h2 className='h1'>{content.intro.tagline}</h2>
                             <p>{content.intro.statement}</p>
                             {content.contact.links.map((link) => (
-                                <a className='btn m-2 primary' target='_blank' rel='noopener noreferrer' href={link.link}>
+                                <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
                                     {link.text}
                                 </a>
                             ))}
@@ -108,7 +108,7 @@ class App extends Component {
                                     <h3>{project.title}</h3>
                                     <p>{project.text}</p>
                                     {content.contact.links.map((link) => (
-                                        <a className='btn m-2 primary' target='_blank' rel='noopener noreferrer' href={link.link}>
+                                        <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
                                             {link.text}
                                         </a>
                                     ))}
@@ -151,7 +151,7 @@ class App extends Component {
                         <CardList>
                             {this.state.articles.map((article) => (
                                 <ListCard width={4}>
-                                    <a target='_blank' rel='noopener noreferrer' href={article.link}>
+                                    <a className='link-colour' target='_blank' rel='noopener noreferrer' href={article.link}>
                                         <div className='card-image-wrap'>
                                             <img className='card-image' alt='personal' src={article.thumbnail}/>
                                         </div>
@@ -162,22 +162,16 @@ class App extends Component {
                         </CardList>
                     </section>
                     <section id='contact'>
-                        <Fade bottom>
-                            <div>
-                                <div className='d-flex justify-content-center'>
-                                    <div className='shadow col-8 m-3 p-4'>
-                                        <h2>{content.contact.title}</h2>
-                                        <p>{content.contact.text}
-                                        </p>
-                                        {content.contact.links.map((link) => (
-                                            <a className='btn m-2 primary' target='_blank' rel='noopener noreferrer' href={link.link}>
-                                                {link.text}
-                                            </a>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </Fade>
+                        <SectionCard justify='center'>
+                            <h2>{content.contact.title}</h2>
+                            <p>{content.contact.text}
+                            </p>
+                            {content.contact.links.map((link) => (
+                                <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
+                                    {link.text}
+                                </a>
+                            ))}
+                        </SectionCard>
                     </section>
                 </main>
                 <footer id='footer' className='shadow p-3 primary text-center'>
