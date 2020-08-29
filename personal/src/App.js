@@ -54,7 +54,7 @@ function App() {
                         <h2>{content.intro.tagline}</h2>
                         <p>{content.intro.statement}</p>
                         {content.contact.links.map((link) => (
-                            <a class="btn m-2 primary" href={link.link}>
+                            <a class="btn m-2 primary" target='_blank' rel="noopener noreferrer" href={link.link}>
                                 {link.text}
                             </a>
                         ))}
@@ -122,7 +122,7 @@ function App() {
                         <p>{content.contact.text} 
                         </p>
                         {content.contact.links.map((link) => (
-                            <a class="btn m-2 primary" href={link.link}>
+                            <a class="btn m-2 primary" target='_blank' rel="noopener noreferrer" href={link.link}>
                                 {link.text}
                             </a>
                         ))}
