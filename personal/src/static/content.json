@@ -68,23 +68,26 @@
                     "Worked with the team to strategically addresses changes required for multiple campaigns in parallel, across different lines of business with strict deadlines, and worked with our business partners and design/content teams to coordinate toward a single goal.",
                     "Built a React/Flask dashboard to track how our teams were doing across multiple performance indicators, to ensure that we were delivering to the highest standard.",
                     "Built a React/Flask app to automate the creation of release notes and post them on Confluence, ensured that we were keeping track of what changes went to production and when.",
-                    "Created a system to auto-generate pages from templated Word documents, used by the product owners and content team, with minimal developer interaction. ",
+                    "Created a system to auto-generate pages from templated Word documents, used by the product owners and content team, with minimal developer interaction.",
                     "Created an automated set of tests to run on every page to ensure that all of our pages were meeting a high level of quality. Tests include: accessibility, broken links, SEO ratings and page load speeds."
-                ]
+                ],
+                "image": "./static/bmo.svg"
             },
             {
                 "title": "Technical Consultant (QA) - QA Consultants (November 2017 - May 2019)",
                 "points": [
                     "Worked as an Automation QA to test updates and redesign on the BMO.com website.",
                     "Created generalized scripts to automate testing of text, links, accessibility, form interactions and calculators. This led to greater coverage and decreased delivery times across the 1000+ pages, that were in scope for our team."
-                ]
+                ],
+                "image": "./static/qac.jpg"
             },
             {
                 "title": "Technical QA - Bell Business Markets (July 2016 - October 2017)",
                 "points": [
                     "Worked as a QA Analyst creating, writing and executing test case scenarios for an interactive voice response contact centre system.",
                     "Went on to lead a team of 10 QA analysts to strategically achieve 100% test coverage of all of the branching conversational paths and scenarios and automate the test case writing."
-                ]
+                ],
+                "image": "./static/bell.jpg"
             }
         ]
     },
@@ -93,15 +96,36 @@
         "projects": [
             {
                 "title": "Chess Tutor",
-                "text": "A chess game where a player can play against several different levels of CPU difficulty, with the goal of creating an AI to play chess against and evaluate the strength of human player moves (Early Stages of Development)."
+                "text": "A chess game where a player can play against several different levels of CPU difficulty, with the goal of creating an AI to play chess against and evaluate the strength of human player moves (Early Stages of Development).",
+                "image": "./static/chess_piece.svg",
+                "links": [
+                    {
+                        "text": "Github",
+                        "link": "https://github.com/ozmds/chess-deployment-demo"
+                    },
+                    {
+                        "text": "Live Page",
+                        "link": "https://athavan.dev/chess"
+                    }
+                ]
             },
             {
                 "title": "Minymal Stocks",
-                "text": "A tool based on minimalist-design principles for displaying and consolidating the more complex of historical stock data to present meaningful trends in the market to the end user (Development Start Date: TBD)."
+                "text": "A tool based on minimalist-design principles for displaying and consolidating the more complex of historical stock data to present meaningful trends in the market to the end user (Development Start Date: TBD).",
+                "image": "./static/stock_market.svg",
+                "links": [
+                ]
             },
             {
                 "title": "Basketball Predictor",
-                "text": "Consolidation of NBA statistics to identify trends in team success, with the goal of reliably predicting the outcome of basketball games over time (Early Stages of Development)."
+                "text": "Consolidation of NBA statistics to identify trends in team success, with the goal of reliably predicting the outcome of basketball games over time (Early Stages of Development).",
+                "image": "./static/basketball.svg",
+                "links": [
+                    {
+                        "text": "Github",
+                        "link": "https://github.com/ozmds/basketball-predictor"
+                    }
+                ]
             }
         ]
     },

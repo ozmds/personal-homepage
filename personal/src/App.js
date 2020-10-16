@@ -6,8 +6,10 @@ import content from './static/content.json';
 
 const SectionTitleCard = (props) => (
     <Fade bottom>
-        <div className='card-colour shadow col-4 m-3 p-4'>
-            <h2 className='m-0'>{props.children}</h2>
+        <div className='d-flex justify-content-center justify-content-lg-start'>
+            <div className='card-colour shadow col-12 col-lg-4 m-3 p-4'>
+                <h2 className='m-0'>{props.children}</h2>
+            </div>
         </div>
     </Fade>
 );
@@ -15,8 +17,8 @@ const SectionTitleCard = (props) => (
 const SectionCard = (props) => (
     <Fade bottom>
         <div>
-            <div className={`d-flex justify-content-${props.justify}`}>
-                <div className={`card-colour shadow col-8 m-3 p-4 ${props.flex ? 'd-flex' : ''}`}>
+            <div className={`d-flex justify-content-center justify-content-lg-${props.justify}`}>
+                <div className={`card-colour shadow col-12 col-lg-8 m-3 p-4 ${props.flex ? 'd-flex' : ''}`}>
                     {props.children}
                 </div>
             </div>
@@ -34,7 +36,7 @@ const CardList = (props) => (
 
 const ListCard = (props) => (
     <Fade bottom>
-        <li className={`col-${props.width} d-flex p-0`}>
+        <li className={`col-12 col-lg-${props.width} d-flex p-0`}>
             <div className='card-colour shadow p-4 m-3 w-100'>
                 {props.children}
             </div>
@@ -45,8 +47,8 @@ const ListCard = (props) => (
 const WideListCard = (props) => (
     <Fade bottom>
         <li className={`w-100 d-flex justify-content-${props.justify}`}>
-            <div className={`col-${props.width} d-flex p-0`}>
-                <div className='card-colour shadow p-4 m-3 w-100'>
+            <div className={`col-12 col-lg-${props.width} d-flex p-0`}>
+                <div className='card-colour shadow p-4 m-3 w-100 d-flex'>
                     {props.children}
                 </div>
             </div>
@@ -89,11 +91,11 @@ class App extends Component {
                     </section>
                     <section id='about'>
                         <SectionCard justify='end' flex>
-                            <div className='col-8'>
+                            <div className='col-12 col-lg-8'>
                                 <h2>{content.about.title}</h2>
                                 <p>{content.about.bio}</p>
                             </div>
-                            <div className='col-4 p-0'>
+                            <div className='col-4 p-0 d-none d-lg-block'>
                                 <div className='w-100 h-100 image-wrap d-flex align-items-center justify-content-end'>
                                     <img className='image' alt='personal' src={require('./static/personal_photo.jpg')}/>
                                 </div>
@@ -105,13 +107,20 @@ class App extends Component {
                         <CardList>
                             {content.projects.projects.map((project, index) => (
                                 <WideListCard width={10} justify={index % 2 === 0 ? 'start' : 'end'}>
-                                    <h3>{project.title}</h3>
-                                    <p>{project.text}</p>
-                                    {content.contact.links.map((link) => (
-                                        <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
-                                            {link.text}
-                                        </a>
-                                    ))}
+                                    <div className='col-12 col-lg-8'>
+                                        <h3>{project.title}</h3>
+                                        <p>{project.text}</p>
+                                        {project.links.map((link) => (
+                                            <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
+                                                {link.text}
+                                            </a>
+                                        ))}
+                                    </div>
+                                    <div className='col-4 p-0 d-none d-lg-block'>
+                                        <div className='w-100 h-100 image-wrap d-flex align-items-center justify-content-end'>
+                                            <img className='image' alt='personal' src={require("" + project.image)}/>
+                                        </div>
+                                    </div>
                                 </WideListCard>
                             ))}
                         </CardList>
@@ -131,17 +140,24 @@ class App extends Component {
                             ))}
                         </CardList>
                     </section>
-                    <section id='experience'>
+                    <section id='experience' className='d-none d-lg-block'>
                         <SectionTitleCard>{content.work.title}</SectionTitleCard>
                         <CardList>
                             {content.work.jobs.map((job, index) => (
                                 <WideListCard width={11} justify={index % 2 === 0 ? 'start' : 'end'}>
-                                    <h3>{job.title}</h3>
-                                    <ul>
-                                        {job.points.map((point) => (
-                                            <li>{point}</li>
-                                        ))}
-                                    </ul>
+                                    <div className='col-12 col-lg-8'>
+                                        <h3>{job.title}</h3>
+                                        <ul>
+                                            {job.points.map((point) => (
+                                                <li>{point}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div className='col-4 p-0 d-none d-lg-block'>
+                                        <div className='w-100 h-100 image-wrap d-flex align-items-center justify-content-end'>
+                                            <img className='image' alt='personal' src={require("" + job.image)}/>
+                                        </div>
+                                    </div>
                                 </WideListCard>
                             ))}
                         </CardList>
