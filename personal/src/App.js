@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Fade from 'react-reveal/Fade';
+import PropTypes from 'prop-types';
 import content from './static/content.json';
 
 const SectionTitleCard = (props) => (
@@ -13,6 +14,10 @@ const SectionTitleCard = (props) => (
         </div>
     </Fade>
 );
+
+SectionTitleCard.propTypes = {
+    children: PropTypes.element
+};
 
 const SectionCard = (props) => (
     <Fade bottom>
@@ -26,6 +31,12 @@ const SectionCard = (props) => (
     </Fade>
 );
 
+SectionCard.propTypes = {
+    justify: PropTypes.string,
+    flex: PropTypes.string,
+    children: PropTypes.element
+};
+
 const CardList = (props) => (
     <div className='m-3'>
         <ul className='list-reset row'>
@@ -33,6 +44,10 @@ const CardList = (props) => (
         </ul>
     </div>
 );
+
+CardList.propTypes = {
+    children: PropTypes.element
+};
 
 const ListCard = (props) => (
     <Fade bottom>
@@ -43,6 +58,11 @@ const ListCard = (props) => (
         </li>
     </Fade>
 );
+
+ListCard.propTypes = {
+    width: PropTypes.number,
+    children: PropTypes.element
+};
 
 const WideListCard = (props) => (
     <Fade bottom>
@@ -55,6 +75,13 @@ const WideListCard = (props) => (
         </li>
     </Fade>
 );
+
+WideListCard.propTypes = {
+    justify: PropTypes.string,
+    width: PropTypes.number,
+    children: PropTypes.element
+};
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -65,7 +92,7 @@ class App extends Component {
 
     componentDidMount() {
         axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40athavan.karunakaran').then((res) => {
-            if (res.data.hasOwnProperty('items')) {
+            if (Object.prototype.hasOwnProperty.call(res.data, 'items')) {
                 this.setState({ articles: res.data.items });
             }
         });
@@ -83,7 +110,7 @@ class App extends Component {
                             <h2 className='h1'>{content.intro.tagline}</h2>
                             <p>{content.intro.statement}</p>
                             {content.contact.links.map((link) => (
-                                <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
+                                <a className='btn m-2 button-colour' key={link.text} target='_blank' rel='noopener noreferrer' href={link.link}>
                                     {link.text}
                                 </a>
                             ))}
@@ -106,19 +133,19 @@ class App extends Component {
                         <SectionTitleCard>{content.projects.title}</SectionTitleCard>
                         <CardList>
                             {content.projects.projects.map((project, index) => (
-                                <WideListCard width={10} justify={index % 2 === 0 ? 'start' : 'end'}>
+                                <WideListCard key={project.text} width={10} justify={index % 2 === 0 ? 'start' : 'end'}>
                                     <div className='col-12 col-lg-8'>
                                         <h3>{project.title}</h3>
                                         <p>{project.text}</p>
                                         {project.links.map((link) => (
-                                            <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
+                                            <a key={link.text} className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
                                                 {link.text}
                                             </a>
                                         ))}
                                     </div>
                                     <div className='col-4 p-0 d-none d-lg-block'>
                                         <div className='w-100 h-100 image-wrap d-flex align-items-center justify-content-end'>
-                                            <img className='image' alt='personal' src={require("" + project.image)}/>
+                                            <img className='image' alt='personal' src={require(`${project.image}`)}/>
                                         </div>
                                     </div>
                                 </WideListCard>
@@ -129,11 +156,11 @@ class App extends Component {
                         <SectionTitleCard>{content.skills.title}</SectionTitleCard>
                         <CardList>
                             {content.skills.skills.map((category) => (
-                                <ListCard width={3}>
+                                <ListCard key={category.title} width={3}>
                                     <h3>{category.title}</h3>
                                     <ul className='list-reset'>
                                         {category.skills.map((skill) => (
-                                            <li>{skill}</li>
+                                            <li key={skill}>{skill}</li>
                                         ))}
                                     </ul>
                                 </ListCard>
@@ -144,18 +171,18 @@ class App extends Component {
                         <SectionTitleCard>{content.work.title}</SectionTitleCard>
                         <CardList>
                             {content.work.jobs.map((job, index) => (
-                                <WideListCard width={11} justify={index % 2 === 0 ? 'start' : 'end'}>
+                                <WideListCard key={job.title} width={11} justify={index % 2 === 0 ? 'start' : 'end'}>
                                     <div className='col-12 col-lg-8'>
                                         <h3>{job.title}</h3>
                                         <ul>
                                             {job.points.map((point) => (
-                                                <li>{point}</li>
+                                                <li key={point}>{point}</li>
                                             ))}
                                         </ul>
                                     </div>
                                     <div className='col-4 p-0 d-none d-lg-block'>
                                         <div className='w-100 h-100 image-wrap d-flex align-items-center justify-content-end'>
-                                            <img className='image' alt='personal' src={require("" + job.image)}/>
+                                            <img className='image' alt='personal' src={require(`${job.image}`)}/>
                                         </div>
                                     </div>
                                 </WideListCard>
@@ -166,7 +193,7 @@ class App extends Component {
                         <SectionTitleCard>{content.articles.title}</SectionTitleCard>
                         <CardList>
                             {this.state.articles.map((article) => (
-                                <ListCard width={4}>
+                                <ListCard key={article.title} width={4}>
                                     <a className='link-colour' target='_blank' rel='noopener noreferrer' href={article.link}>
                                         <div className='card-image-wrap'>
                                             <img className='card-image' alt='personal' src={article.thumbnail}/>
@@ -183,7 +210,7 @@ class App extends Component {
                             <p>{content.contact.text}
                             </p>
                             {content.contact.links.map((link) => (
-                                <a className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
+                                <a key={link.text} className='btn m-2 button-colour' target='_blank' rel='noopener noreferrer' href={link.link}>
                                     {link.text}
                                 </a>
                             ))}

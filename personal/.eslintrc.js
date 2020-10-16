@@ -13,7 +13,9 @@ module.exports = {
         "react/jsx-no-literals": ["error"],
         "react/jsx-indent" : ["error", 4],
         "react/jsx-indent-props": ["error", 4],
-        "max-lines": ["error", 80]
+        "max-lines": ["error", 80],
+        "global-require": "off",
+        "import/no-dynamic-require": "off"
     },
     "env": {
         "browser": true,
