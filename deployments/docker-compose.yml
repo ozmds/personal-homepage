@@ -1,0 +1,10 @@
+version: "2"
+services:
+    homepage_ui:
+        container_name: personal-homepage
+        build:
+            context: ../
+            dockerfile: deployments/personal_homepage/dev/Dockerfile
+        ports:
+            - "3000:3000"
+        tty: true
