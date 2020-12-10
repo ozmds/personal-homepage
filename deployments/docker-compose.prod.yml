@@ -1,9 +1,0 @@
-version: "2"
-services:
-    homepage_ui:
-        container_name: personal-homepage
-        build:
-            context: ../
-            dockerfile: deployments/personal_homepage/prod/Dockerfile
-        ports:
-            - "80:80"
