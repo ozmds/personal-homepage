@@ -9,7 +9,7 @@ module.exports = {
     rules: {
         indent: ['error', 4],
         'comma-dangle': ['error', 'never'],
-        quotes: ['error', 'single', { 'avoidEscape': true }],
+        quotes: ['error', 'single', { avoidEscape: true }],
         'jsx-quotes': ['error', 'prefer-single'],
         'react/jsx-no-literals': ['error'],
         'react/jsx-indent': ['error', 4],
